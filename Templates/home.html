@@ -1,0 +1,32 @@
+{% include "header.html" %}
+
+<div class="jumbotron-fluid">
+    <div class="container">
+        <h1>This page is exclusively for logged in users</h1>
+        <h5><a href="/logout" class="text-danger">logout</a></h5>
+    </div>
+
+</div>
+<div class="container">
+    <h3>Admin Dashboard</h3>
+
+    <div class="card">
+        <div class="card-header">
+            <h5>Fill in the form below</h5>
+            <h5 class="text-success">{{ msg }}</h5>
+        </div>
+        <div class="card-body">
+            <form action="/add-products" method="POST">
+                <input type="text" name="title" placeholder="Product Name"><br><br>
+                <input type="number" name="price" placeholder="Price"><br><br>
+                <textarea name="description" id="" cols="30" rows="10"></textarea><br><br>
+                <input type="submit" value="Save Product"><br><br>
+    </form>
+
+        </div>
+    </div>
+
+</div>
+
+
+{% include "footer.html" %}

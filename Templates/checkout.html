@@ -1,0 +1,58 @@
+{% include "header.html" %}
+
+<div class="jumbotron">
+    <div class="container">
+        <h1>Checkout</h1>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row pb-5">
+        {% for product in result %}
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header"><h3>Complete Your Purchase Below</h3></div>
+                <img src="../static/img/{{ product[4] }}" alt="{{ product[1] }}">
+                <div class="card-body">
+
+                    <ul class="list-group">
+                        <li class="list-group-item active bg-danger">Your Order Details</li>
+                        <li class="list-group-item">Name: {{ product[1] }}</li>
+                        <li class="list-group-item">Desc: {{ product[3] }}</li>
+                        <li class="list-group-item">Total: {{ product[2] }}</li>
+                        <li class="list-group-item">Your Mobile Number:
+                        <form action="/buy" method="POST">
+                            <input type="hidden" name="amount" value="{{ product[2] }}">
+                            <input type="tel" name="phone" placeholder="2547xxxxxxxx">
+                            <input type="submit" value="Make Payment">
+                        </form>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header"><h3>Alternatively! User the Manual method</h3></div>
+                <div class="card-body">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item active bg-danger">Follow Instructions Below</li>
+                        <li class="list-group-item">1. Go to SimTookKit on your phone</li>
+                        <li class="list-group-item">2. Select Mpesa</li>
+                        <li class="list-group-item">3. Select Lipa Na Mpesa</li>
+                        <li class="list-group-item">4. Enter 174379 as the paybill number</li>
+                        <li class="list-group-item">5. Enter {{ product[2] }} as the Amount</li>
+                        <li class="list-group-item">6. Enter Your PIN</li>
+                        <li class="list-group-item">7. Finish Your Purchase</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div><!-- the row ends here -->
+
+</div>
+
+
+{% include "footer.html" %}

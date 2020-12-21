@@ -1,0 +1,39 @@
+{% include "header.html" %}
+
+<div class="jumbotron">
+    <div class="container">
+        <h1>Register below</h1>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                     <h3>Fill in the form below</h3>
+                </div>
+
+            </div>
+            <div class="card-body">
+
+            <form action="/login-user" method="post">
+                 <input type="email" name="email" placeholder="Email Address"><br><br>
+                 <input type="password" name="password" placeholder="Create Password"><br><br>
+                 <input type="submit" value="Login">
+
+            </form>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h3>Alternatively</h3>
+                </div>
+                <div class="card-body">
+                    <p>Already Registered, <a href="/login">Login</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% include "footer.html" %}

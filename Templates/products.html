@@ -1,0 +1,63 @@
+{% include "header.html" %}
+
+
+ <div class="container">
+<div class="row">
+    <div class="col-md-6">
+            <img src="../static/images/veg3.jpg" alt="image here" class="img-fluid">
+        </div>
+
+        <div class="col-md-6 pt-5">
+            <p class="pt-5">
+
+            </p>
+            <p class="pt-5">
+
+            </p>
+            <p class="pt-5">
+
+            </p>
+            <h1 class="text-warning pt-5">Unmatched Quality and freshness</h1>
+
+
+            <a class="btn btn-primary btn-success" href="/products">
+                Shop here
+            </a>
+        </div>
+</div>
+     <div class="jumbotron">
+    <div class="container">
+        <h1>Products</h1>
+    </div>
+</div>
+
+ </div>
+
+<div class="container">
+<!--    The card below will be our products template-->
+    <div class="row">
+
+        {% for row in result %}
+
+        <div class="col-md-3">
+            <div class="card">
+                 <img src="../static/images/placeholder.png" alt="product image" class="img-fluid">
+             </div>
+            <div class="card-body">
+                <h5>{{ row[1] }}</h5>
+                <p>
+                   {{ row[3] }}
+                </p>
+                <h6>{{ row[2] }}</h6>
+                <a href="/checkout?id={{ row[0] }}" class="btn btn-success">Add to cart</a>
+            </div>
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+</div>
+
+
+{% include "footer.html" %}
